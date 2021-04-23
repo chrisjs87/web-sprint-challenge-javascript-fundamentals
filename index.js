@@ -134,9 +134,9 @@ function greeting(firstName, lastName){
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-  console.log(consume(2, 2, add)); // 4
-  console.log(consume(10, 16, multiply)); // 160
-  console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+  // console.log(consume(2, 2, add)); // 4
+  // console.log(consume(10, 16, multiply)); // 160
+  // console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
   
   
 // 🦁💪 Stretch: If you haven't already, convert your array method callbacks into arrow functions - make sure you comment out this section before you submit your work 🦁💪
@@ -185,15 +185,31 @@ CuboidMaker.prototype.volume = function(){
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-console.log(cuboid.volume()); // 100
-console.log(cuboid.surfaceArea()); // 130
+// console.log(cuboid.volume()); // 100
+// console.log(cuboid.surfaceArea()); // 130
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
-class CuboidMakerTwo{
 
+class CuboidMakerTwo{
+  constructor(obj){
+    this.length = obj.length;
+    this.width = obj.width;
+    this.height = obj.height;
+  }
+  volume(){
+    return this.length * this.width * this.height;
+  }
+  surfaceArea(){
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+  }
 }
 
+const cuboidTwo = new CuboidMakerTwo({
+  length: 4, 
+  width: 5,
+  height: 5
+});
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
 // console.log(cuboidTwo.volume()); // 100
