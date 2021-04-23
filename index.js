@@ -57,7 +57,7 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(zooAnimalsPlaceHolder){    //we want scientific name and animal name animal_name scientific_name
+  function animalNames(zooAnimalsPlaceHolder){
     let displayNames = [];
     zooAnimalsPlaceHolder.forEach(function(item){
       return displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
@@ -65,27 +65,28 @@ const zooAnimals = [
     return displayNames;
   }
   
-
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
   Using lowerCaseNames use .map() to create a new array of strings with the animal's names in lowercase and return the new array. 
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(zooAnimalsPlaceHolder){
+    return zooAnimalsPlaceHolder.map(function(item){
+      return item.animal_name.toLowerCase();
+    });
   }
-  
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(zooAnimalsPlaceHolder){
+    return zooAnimalsPlaceHolder.filter(function(item){
+      return item.population < 5;
+    });
   }
-  
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -93,8 +94,10 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(zooAnimalsPlaceHolder){
+    return zooAnimalsPlaceHolder.reduce(function(acc, item){
+      return acc + item.population;
+    },0);
   }
   
   
