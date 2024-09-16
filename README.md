@@ -29,13 +29,29 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
 
+forEach() will work through the function it is provided on each item in an array, while map() will create a new array with the actions its provided function does on each array item. Furthermore, forEach() does not require a return, but map() will require a return statement.
+
 2. Explain the difference between a callback and a higher order function.
+
+A higher order function is a function that takes functions for its arguments, and a callback function is an example of a function that would be passed into a higher order function as an argument. 
 
 3. What is closure?
 
+Closure is when a Function used within another function must look from child to parent in order to find 'closure', looking for variable values outside of the child's scope, but available in the parent's scope, or further up from that, ie the grandparent etc.
+
 4. Describe the four rules of the 'this' keyword.
 
+    1- The first principle is Window/Global Object Binding; this means that the context of the this keyword is not given, and defaults to referring to the window, ie the Global object.
+
+    2- The second principle is Implicit Binding; this means that the context of the this keyword is set to the object prior to the called dot-'.' function.
+
+    3- The third principle is New Binding; this means that a constructor function is used, and the 'this' will refer to the specific object constructed
+    
+    4- The fourth principle is Explicit Binding; this means that JS's call/apply method is used, and a parameter/argument specifies what 'this' is.
+
 5. Why do we need super() in an extended class?
+
+Super will look at what is being extended and then take and apply the parent class's property keys as well as the parent class's methods to the child constructor such that each child item will have each of those properties and also have access to the parent class's methods.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
